@@ -10,66 +10,61 @@ st.set_page_config(
 )
 st.markdown("""
 <style>
-/* ===== 모바일 / 라이트모드 가독성 강제 ===== */
-html, body, [class*="css"] {
+/* ===== 기본 배경 ===== */
+html, body {
     background-color: #F9FAFB !important;
-    color: #1F2937 !important;
 }
 
-/* 제목 */
-h1, h2, h3 {
+/* ===== 제목 계층 ===== */
+h1 {
+    color: #0F172A !important;
+}
+h2, h3 {
     color: #111827 !important;
 }
 
-/* 일반 텍스트 */
-p, span, li, div {
-    color: #1F2937 !important;
+/* ===== 일반 텍스트 (본문) ===== */
+.stMarkdown, 
+.stText, 
+.stSubheader, 
+.stHeader,
+label {
+    color: #111827 !important;
+    font-weight: 500;
 }
 
-/* 캡션 */
+/* ===== 입력창 라벨 ===== */
+[data-testid="stWidgetLabel"] {
+    color: #0F172A !important;
+    font-weight: 600;
+}
+
+/* ===== 캡션 / 보조 설명 ===== */
 .caption {
-    color: #4B5563 !important;
+    color: #6B7280 !important;
+    font-size: 0.9rem;
 }
 
-/* 데이터프레임 텍스트 */
+/* ===== 테이블 텍스트 ===== */
 [data-testid="stDataFrame"] * {
     color: #111827 !important;
 }
-</style>
-""", unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-.block-container { max-width: 1100px; padding-top: 3rem; }
-h1, h2, h3 { font-weight: 700; letter-spacing: -0.4px; }
-.caption { color: #666; font-size: 0.95rem; line-height: 1.6; }
-
-.notice-box {
-    border: 2px solid #2F6FED;
-    background-color: #F4F7FF;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.notice-box li { margin-bottom: 0.8rem; font-weight: 500; }
-
+/* ===== 버튼 ===== */
 .stButton > button {
     background-color: #2F6FED;
-    color: white;
-    border-radius: 8px;
-    padding: 0.6rem 1.4rem;
+    color: #FFFFFF !important;
     font-weight: 600;
-    border: none;
 }
-.stButton > button:hover { background-color: #2559C4; }
 
-[data-testid="stDataFrame"] {
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
+/* ===== 라디오 / 체크 ===== */
+[data-testid="stRadio"] label,
+[data-testid="stCheckbox"] label {
+    color: #111827 !important;
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 # ==================================================
 # Session State
@@ -271,4 +266,3 @@ elif st.session_state.page == "calc":
         if st.button("← 다시 계산하기"):
             st.session_state.page = "intro"
             st.rerun()
-
