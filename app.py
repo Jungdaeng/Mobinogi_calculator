@@ -8,6 +8,35 @@ st.set_page_config(
     page_title="모비노기 도적 보석 태그 효율 계산기",
     layout="wide"
 )
+st.markdown("""
+<style>
+/* ===== 모바일 / 라이트모드 가독성 강제 ===== */
+html, body, [class*="css"] {
+    background-color: #F9FAFB !important;
+    color: #1F2937 !important;
+}
+
+/* 제목 */
+h1, h2, h3 {
+    color: #111827 !important;
+}
+
+/* 일반 텍스트 */
+p, span, li, div {
+    color: #1F2937 !important;
+}
+
+/* 캡션 */
+.caption {
+    color: #4B5563 !important;
+}
+
+/* 데이터프레임 텍스트 */
+[data-testid="stDataFrame"] * {
+    color: #111827 !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 st.markdown("""
 <style>
@@ -242,3 +271,4 @@ elif st.session_state.page == "calc":
         if st.button("← 다시 계산하기"):
             st.session_state.page = "intro"
             st.rerun()
+
