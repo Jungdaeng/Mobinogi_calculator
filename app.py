@@ -108,6 +108,29 @@ button[kind="secondary"] {
     background-color: #FFFFFF !important;
     color: #111827 !important;
 }
+/* ===== number_input 전체 ===== */
+[data-testid="stNumberInput"] {
+    background-color: #FFFFFF !important;
+}
+
+/* ===== + / - 버튼 컨테이너 ===== */
+[data-testid="stNumberInput"] div[role="spinbutton"] {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+}
+
+/* ===== + / - 버튼 ===== */
+[data-testid="stNumberInput"] button {
+    background-color: #E5E7EB !important;
+    color: #111827 !important;
+    border: 1px solid #D1D5DB !important;
+}
+
+/* ===== 버튼 hover ===== */
+[data-testid="stNumberInput"] button:hover {
+    background-color: #CBD5F5 !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
